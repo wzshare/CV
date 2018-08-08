@@ -1,25 +1,22 @@
 # 数据格式可以为 yaml(文件以.yml结尾) 或者json(文件以.json结尾)
 # 如果YAML格式的数据请先检查格式是否有误，可选检查工具 http://www.yamllint.com
 
-title: "简历标题"
+title: "个人简历"
 lang: "zh" #语言设置 zh表示中文 en 表示英语
-name: "你的名字"
-jobtitle: "求职意向wz" #可空不显示
+name: "王哲"
+jobtitle: "iOS 研发工程师" #可空不显示
 photo: "assets/img/photo.jpg" #照片可空，不显示
 
 #联系方式
 contact: #联系方式连接等3~5行
-- text: "youremail@example.com" #文本内容
-  href: 'mailto:youremail@example.com' #链接，无链接则空  
+- text: "csuwangzhe13@163.com" #文本内容
+  href: 'mailto:csuwangzhe13@163.com' #链接，无链接则空  
   icon: 'icons/email.svg' #图标 svg文件
-- text: "1234567890"
-  href: 'tel:1234567890'
+- text: "15210697983"
+  href: 'tel:15210697983'
   icon: 'icons/phone.svg'
-- text: "your-website.com"
-  href: 'http://your-website.com'
-  icon: 'icons/web.svg'
-- text: "GitHubID"
-  href: 'https://github.com/NewFuture'
+- text: "wzshare"
+  href: 'https://github.com/wzshare'
   icon: "icons/github.svg"
   attr: 'target="_blank"' #新标签页打开
   # - text: "地址"
@@ -27,80 +24,96 @@ contact: #联系方式连接等3~5行
 
 #main下面是主体内容，类别条数不限
 main: #简历主要内容，
-- type: education #类别为ID
-  name: 教育 #显示名称，空则使用type
-  content: #内容基本格式 标题-副标题-日期-详细内容 (都允许空)
-  - title: 大学名称
-    duration: "2011年x月 - 2015年"
-    sub: 地点或学历
-    detail: 专业或者简短说明
-  - title: Your University
-    duration: Aug 2007 - Jun 2011
-    sub: Ut enim ad minim veniam
-    detail: Master Bachelor of Computer Science & Technology.
+# - type: education #类别为ID
+#   name: 教育 #显示名称，空则使用type
+#   content: #内容基本格式 标题-副标题-日期-详细内容 (都允许空)
+#   - title: 大学名称
+#     duration: "2011年x月 - 2015年"
+#     sub: 地点或学历
+#     detail: 专业或者简短说明
+#   - title: Your University
+#     duration: Aug 2007 - Jun 2011
+#     sub: Ut enim ad minim veniam
+#     detail: Master Bachelor of Computer Science & Technology.
 
 - type: skills
-  # name: "技能"
+  name: "个人信息"
   content:
-  - title: 编程语言
-    items: #itmems 可以小块的方式显示
-    - 汉语
-    - 语言2
-    - 语言3
-  - title: Skill Group
-    summary: Consectetur, Adipiscing, Elit
+  - title: 研究生 / 计算机技术 / 中国科学院大学 / 2013.09 ~ 2016.06
+  - title: 工作经验：2年
+  - title: 熟悉语言：Objective-C > C++ > Swift > Python
+  # items: #itmems 可以小块的方式显示
+    # - 汉语
+    # - 语言2
+    # - 语言3
+    # summary: Consectetur, Adipiscing, Elit
 
 - type: experience
-  name: 经验
+  name: 工作经验
   content:
-  - title: 职位
-    sub: 某某公司
-    duration: "xxxx年xx月 - yyyy年yy月"
+  - title: 暴风影音 iOS 研发工程师
+    sub: 暴风集团
+    duration: "2016年02月 - 现今"
     tags:
-    - 标签
-    summary: 职务或者工作总结(自动折叠)
-    detail: 同时包含 summary和detail在Chrome，Safari(包括IOS)，Android和新版Firefox等会自动折叠，不支持折叠的浏览器和展开后表现一致
+    summary: 负责 暴风影音 App 功能迭代。
+    detail: 
     # open: open
-    #可以设置open默认展开
-  - title: Job Title
-    sub: Your 2nd, Inc.  
-    duration: Apr 2013 - Mar 2016
-    tags: 
-    - tagname
-    summary: Summary your job or work. (Collapse)
-    detail: Details can be collapsed in Chrome Safari, Firefox, Opera and so on. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    # 可以设置open默认展开
 
 - type: projects
-  name: Projects
+  name: 工作项目
   content:
-  - title: 项目名称
-    duration: xxxx年xx月 - yyyy年yy月
-    detail: 项目和工作介绍，项目总结.
-    sub: 维护者
-  - title: Project Name
-    summary: Projects' introduction or summary
-    detail:
-      md: _data/demo.md
-    sub: Creator and maintainer.
+  - title: 播放器广告重构
+    duration: 
+    detail: 负责把三部分相互独立但是功能有重复的广告重构为一个 Advert Manager，通过继承关联广告的功能，采用 MVVM 架构减少 Controller 的臃肿，使得播放器广告功能成为一个相对独立的功能，方便调用和维护。
+    sub: 
+  - title: 无限轮播焦点图
+    summary: 
+    detail: 实现了一个可以无限滚动的焦点图，主要思路是通过定时器控制 ScrollView 实现滚动，ScorllView 的大小为三张焦点图的大小，循环更新 ScorllView，数据源采用 Block 传入。
+    sub: 
+  - title: App 启动优化
+    summary: 
+    detail: 采用减少动态库和异步初始化，分为两个部分，1、从启动到 main() 函数，2、从 main() 到 applicationWillFinishLaunching，优化点：减少不必要的动态库和已经没有使用的类，平衡类的数量和每个类的大小，用 +initialize 替代 +load，在 main() 阶段精简主线程，复杂类采用懒加载、数据异步加载。
+    sub:
+  - title: 边下边播
+    summary: 
+    detail: 针对 m3u8 和分段 mp4 格式的 p2p 视频，支持边下边播。把 p2p 的下载任务和播放任务分离，使 p2p 下载任务开启的同时可以调用播放器 SDK 播放已经下载的文件。
+    sub:
+  - title: 信息流项目
+    summary: 
+    detail: 实现统计页面加载时间功能，通过对 UIViewController 的初始化方法 hook，添加 KVO 让系统自动生成隐蔽子类，然后对子类的 viewDidLoad、viewDidAppear、viewWillAppear 方法 hook。实现多种信息流样式，比如短视频自动播放、缩放海报等。
+    sub:
+
+- type: projects
+  name: 其他项目
+  content:
+  - title: 移动端人体姿势检测
+    summary: 
+    detail: 基于深度学习的开源库 OpenPose 把 Caffe 模型转化为 Core ML 模型，并重新实现 heatmap 和 estimator 部分。
+    sub:
+  - title: 图片风格化项目
+    summary: 
+    detail: 实现《Perceptual Losses for Real-Time Style Transfer and Super-Resolution》中的实时风格转换模型，训练为支持 Core ML 的 .mlmodel 格式，完成了一个可以把本地图片或相机拍摄图片风格化的 Demo。
+    sub:
    #可继续添加更多内容
 
 #others 其他简略内容(列表)
-others: #其他列表显示
-- type: others #ID可以为空
-  name: '其他'
-  content: #选择需要的格式
-  - 单行文字
-  - title: "加粗:"
-    text: "列表项二"
-  - title: "兴趣:"
-    items: #单行列表
-    - 睡觉
-    - 吃饭
-    - coding
-  - title: 列表
-    list:
-    - 第一项
-    - 第二项
+# others: #其他列表显示
+# - type: others #ID可以为空
+#   name: '其他'
+#   content: #选择需要的格式
+#   - 单行文字
+#   - title: "加粗:"
+#     text: "列表项二"
+#   - title: "兴趣:"
+#     items: #单行列表
+#     - 睡觉
+#     - 吃饭
+#     - coding
+#   - title: 列表
+#     list:
+#     - 第一项
+#     - 第二项
 #- type: 
 #  name: '其他'
 #  content: #选择需要的格式
@@ -111,12 +124,12 @@ others: #其他列表显示
 footer: #脚注多组
   print: #打印版markdown或者html
   screen:
-  - text: "简历脚注"
+  - text: "感谢阅读"
   #   href: '/'
-  - text: "Made with &hearts; by NewFuture"
-    href: "https://github.com/NewFuture/CV/"
+  - text: "Made with &hearts; by wzshare"
+    href: "https://github.com/wzshare/CV/"
 
-#页面额外js脚本，如xx统计
+# 页面额外js脚本，如xx统计
 scripts:
-#- src: "assets/js/resume.js"
+# - src: "assets/js/resume.js"
 #  defer: defer #可以设置defer或者sync异步加载
